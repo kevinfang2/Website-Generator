@@ -1,0 +1,83 @@
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/myriad.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <%- include('partials/navbar') %>
+
+    <div class="wrapper">
+        <div class="container">
+            <div style="padding: 50px 0 40px 0;" class="row heading">
+        		<h1>Login</h1>
+        	</div>
+            <div class="row">
+                <form id="myform" method="post" action="/login">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" name="password" required>
+                    </div>
+                    <!-- <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div> -->
+                    <div style="padding-top: 5px;">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                        &nbsp <a href="forgot">Forgot Password?</a>
+                    </div>
+                </form>
+                <div>
+                    <% if (message.length > 0) { %>
+                        <p style="color:red;" id="message">Incorrect email or password.</p>
+                    <% } %>
+                </div>
+                No account yet? &nbsp<a href="registration">Sign up now!</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+    <%- include('partials/contact') %>
+
+    <!-- jQuery -->
+    <script src='javascripts/lib/jquery.min.js'></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="javascripts/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+
+</body></html>

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-scroll" role="navigation">
+    <div style="margin:0px 40px 0 40px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img class="logo" src="/img/logo.png"><%= title %></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <% if (login) { %>
+                        <a href="/logout">Logout</a>
+                    <% }else{ %>
+                        <a  <% if (title === "Login - Gunn Business") { %> class="nav-bold" <% }else{ %> data-toggle="modal" data-target="#login" <% } %> >Login</a>
+                    <% } %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<%- include('login') %>

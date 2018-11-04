@@ -1,7 +1,5 @@
-# Gunn Business Website
-website and server for Gunn Business Club
-
-http://gunnbusiness.com
+# CSV-to-Platform
+website built off github.com/myh1000/deca
 
 ## setup
 ```
