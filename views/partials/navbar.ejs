@@ -13,6 +13,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                  <% if(login) { %>
+                    <a href="/resources" style="float:left">Profile</a>
+                  <% } %>
+                </li>
+                <li>
                     <% if (login) { %>
                         <a href="/logout">Logout</a>
                     <% }else{ %>

@@ -20,17 +20,17 @@ module.exports = function(app, passport){
       res.render('home', { title: 'Gunn Business' });
     });
 	// app.get('/pb', function(req, res, next) {
-    //   res.render('pb', { title: 'Partnership with Business - Gunn Business' });
+    //   res.render('pb', { title: 'Partnership with Business - name' });
     // });
 	// app.get('/cs', function(req, res, next) {
-    //   res.render('cs', { title: 'Community Service - Gunn Business' });
+    //   res.render('cs', { title: 'Community Service - name' });
     // });
     /* GET About page. */
     app.get('/about', function(req, res, next) {
-      res.render('about', { title: 'About - Gunn Business' });
+      res.render('about', { title: 'Gunn Business' });
     });
     app.get('/officers', function(req, res, next) {
-      res.render('officers', { title: 'Current Officers - Gunn Business' });
+      res.render('officers', { title: 'Gunn Business' });
     });
 	// app.get('/zohoverify/verifyforzoho.html', function(req, res, next) {
     //   res.render('verifyforzoho');
@@ -45,7 +45,7 @@ module.exports = function(app, passport){
 			// 	console.log(token);
 			// 	console.log(Date.now() + 172800000);
 			//   });
-			res.render('login', { title: 'Login - Gunn Business', message: req.flash('message')});
+			res.render('login', { title: 'Gunn Business', message: req.flash('message')});
 		}
 	});
 	app.post('/login', passport.authenticate('login', {
@@ -58,7 +58,7 @@ module.exports = function(app, passport){
 		if(req.isAuthenticated(req, res)) {
             res.redirect('/resources');
         } else {
-			res.render('registration', { title: 'User Registration - Gunn Business', message: req.flash('message')});
+			res.render('registration', { title: 'Gunn Business', message: req.flash('message')});
 		}
 	});
     /* Handle Registration POST */
@@ -76,7 +76,7 @@ module.exports = function(app, passport){
             res.redirect('/resources');
         } else {
 			res.render('forgot', {
-				title: 'Forgot Password - Gunn Business',
+				title: 'Gunn Business',
 				message: req.flash('message'),
 				info: req.flash('info')
 			});
@@ -103,7 +103,7 @@ module.exports = function(app, passport){
 		        user.save(function(err) {
 		          done(err, token, user);
 		        });
-				// req.flash('info', 'Please see a Gunn Business Officer for more the link to reset your password.');
+				// req.flash('info', 'Please see a name Officer for more the link to reset your password.');
 		      });
 			},
 		    function(token, user, done) {
@@ -112,7 +112,7 @@ module.exports = function(app, passport){
 				var mailOptions = {
 					to: user.email,
 					from: 'info@gunnbusiness.com',
-					subject: 'Gunn Business Password Reset',
+					subject: 'name Password Reset',
 					text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
 					'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
 					'http://' + 'gunnbusiness.com' + '/reset/' + token + '\n\n' +
@@ -157,7 +157,7 @@ module.exports = function(app, passport){
 			}
 			res.render('reset', {
 				user: req.user,
-				title: 'Reset Password - Gunn Business',
+				title: 'Gunn Business',
 				message: req.flash('message')
 			});
 		});
@@ -188,6 +188,7 @@ module.exports = function(app, passport){
 	});
 	/* GET Profile Page */
 	app.get('/resources', isAuthenticated, function(req, res){
+<<<<<<< HEAD
 		MongoClient.connect('mongodb+srv://daniel:Password123@cluster0-wh7gg.azure.mongodb.net/testDB?retryWrites=true', (err, newDb) => {
 		  if(err) {
 			  return console.log("Error", err);
@@ -206,6 +207,12 @@ module.exports = function(app, passport){
 	    // });
 		  // let showlist = db.collection('demo').find().toArray();
 	  })
+=======
+		res.render('resources', { title: 'Gunn Business', user: req.user, message: req.flash('message')});
+	});
+	app.get('/resources/1', isAuthenticated, function(req, res){
+		res.render('resources', { title: 'Gunn Business', user: req.user, message: req.flash('message')});
+>>>>>>> refs/remotes/origin/master
 	});
 	app.get('/resources/hi', isAuthenticated, function(req, res){
 		res.render('resources', { title: 'Gunn Business', user: req.user, message: req.flash('message')});
@@ -269,7 +276,7 @@ module.exports = function(app, passport){
 			}
 			res.render('user', {
 				user: user,
-				title: 'Reset Password - Gunn Business',
+				title: 'Gunn Business',
 				message: req.flash('message')
 			});
 		});

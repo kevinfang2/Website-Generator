@@ -254,10 +254,6 @@ header.carousel .fill {
 }
 
 .carousel-background {
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.5) 100%), url('../img/carousel_3.jpg') no-repeat center;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.5) 100%), url('../img/carousel_3.jpg') no-repeat center;
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.5) 100%), url('../img/carousel_3.jpg') no-repeat center;
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.5) 100%), url('../img/carousel_3.jpg') no-repeat center;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.5) 100%), url('../img/carousel_3.jpg') no-repeat center;
 }
 
@@ -551,7 +547,7 @@ footer.footer {
     margin: 36px 0 0 0;
     /*text-align: center;*/
 }
-.tagline{
+.tag-line{
   margin-top:20px;
 }
 ul.footer-links {
