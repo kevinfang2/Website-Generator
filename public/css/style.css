@@ -659,6 +659,42 @@ ul.footer-links li a:hover {
    height:100%;
    padding-top:10px;
 }
+
+tbody {
+  font-size: 90%;
+}
+tfoot {
+  font-weight: bold;
+}
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+tr, th, caption {
+    font-family : "Myriad Web",Verdana,Helvetica,Arial,sans-serif;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+th, td {
+    padding: 15px;
+}
+caption {
+    display: table-caption;
+    text-align: center;
+}
 @media only screen and (max-width: 420px){
  .titulo{font-size: 22px}
 }

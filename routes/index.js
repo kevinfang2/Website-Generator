@@ -4,6 +4,8 @@ var crypto = require('crypto');
 var bCrypt = require('bcrypt-nodejs');
 var nodemailer = require('nodemailer');
 var dbConfig = require('../db');
+let mongo = require('mongodb');
+let MongoClient = mongo.MongoClient;
 
 module.exports = function(app, passport){
 
@@ -186,10 +188,27 @@ module.exports = function(app, passport){
 	});
 	/* GET Profile Page */
 	app.get('/resources', isAuthenticated, function(req, res){
-		res.render('resources', { title: 'Resources - Gunn Business', user: req.user, message: req.flash('message')});
+		MongoClient.connect('mongodb+srv://daniel:Password123@cluster0-wh7gg.azure.mongodb.net/testDB?retryWrites=true', (err, newDb) => {
+		  if(err) {
+			  return console.log("Error", err);
+		  }
+		  db = newDb; // ADD THIS
+
+		  // const db = client.db('testDB')
+		  console.log(db.asdf.find({id:3}))
+		  db.listCollections().toArray(function(err, items) {
+			  console.log(items)
+        	});
+
+		//   db.listCollections().toArray((err, collections) => {
+	    //   	console.dir(collections);
+	    //     db.close();
+	    // });
+		  // let showlist = db.collection('demo').find().toArray();
+	  })
 	});
 	app.get('/resources/hi', isAuthenticated, function(req, res){
-		res.render('resources', { title: 'Resources - Gunn Business', user: req.user, message: req.flash('message')});
+		res.render('resources', { title: 'Gunn Business', user: req.user, message: req.flash('message')});
 	});
 	app.post('/setinfo', function(req, res) {
 		req.user.firstName = req.body.firstName;
@@ -216,7 +235,7 @@ module.exports = function(app, passport){
 					userMap[user._id] = user;
 				});
 				console.log(userMap);
-				res.render('admin', { title: 'Admin Panel - Gunn Business', user: req.user, members: userMap, message: req.flash('message')});
+				res.render('admin', { title: 'Gunn Business', user: req.user, members: userMap, message: req.flash('message')});
 			});
         } else {
 			res.redirect('/resources');

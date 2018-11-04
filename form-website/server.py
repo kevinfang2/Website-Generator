@@ -7,15 +7,12 @@ last_csv_name = '$2'
 
 def run_mongo_script(collection):
     global last_csv_name
-    print (last_csv_name)
-    print (collection)
 
     with open('./mongodb_script.sh', 'r') as same:
         same1 = same.read()
         replaced = same1.replace(last_csv_name, collection)
 
     with open('./mongodb_script.sh', "w") as f:
-        print (replaced)
         f.write(replaced)
 
     subprocess.call(['./mongodb_script.sh'])
@@ -40,6 +37,7 @@ def csv_upload():
     writer = csv.writer(myfile, quoting=csv.QUOTE_ALL)
     for row in reader:
         writer.writerow(row)
+    myfile.close()
     run_mongo_script(name)
     redirect('/')
 

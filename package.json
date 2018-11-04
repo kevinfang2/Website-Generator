@@ -15,7 +15,7 @@
     "cookie-session": "^2.0.0-alpha.1",
     "cross-env": "~5.0.5",
     "debug": "~0.7.4",
-    "ejs": "^2.5.1",
+    "ejs": "^2.6.1",
     "express": "~4.2.0",
     "mongoose": "*",
     "morgan": "~1.0.0",
@@ -28,5 +28,13 @@
   "description": "website and server for Gunn Business Club",
   "main": "app.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinfang2/csv-to-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevinfang2/csv-to-platform/issues"
+  },
+  "homepage": "https://github.com/kevinfang2/csv-to-platform#readme"
 }
